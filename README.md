@@ -1,13 +1,14 @@
 # Analiza podatkov s programom R, 2015/16
 
-Avtor: Lonja 
+Avtor: Lonja Tjaša Tavčar
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2015/16.
 
 ## Tematika
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal. Tukaj boste
-napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+Analiza trga z luksuznimi dobrinami
+
+Analizirati spremembe v rasti trga z luksuznimi dobrinami in primerjava med državami. 
 
 ## Program
 
