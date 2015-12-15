@@ -6,7 +6,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2015/16.
 
 ## Tematika
 
-Analiza letnega poročila UKC Ljubljana za leto 2014
+Dejavnost muzejev in razstav v Sloveniji 
 
 ## Program
 
