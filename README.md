@@ -6,9 +6,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2015/16.
 
 ## Tematika
 
-Analiza trga z luksuznimi dobrinami
-
-Analizirati spremembe v rasti trga z luksuznimi dobrinami in primerjava med državami. 
+Analiza letnega poročila UKC Ljubljana za leto 2014
 
 ## Program
 
