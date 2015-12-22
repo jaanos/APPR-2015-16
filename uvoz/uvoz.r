@@ -3,6 +3,8 @@
 #Vektor z imeni regij:
 regije <- c("Leto", "Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska", "Spodnjeposavska", "Jugovzhodna", "Osrednjeslovenska", "Gorenjska", "Notranjsko-kraška", "Goriška", "Obalno-kraška")
 
+
+
 #Uvoz tabele s številom muzejev:
   
 uvozi.stevilomuzejev <- function(){return(read.csv2("podatki/stmuzejevnapreb.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
@@ -19,10 +21,17 @@ uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", h
 
 #Zapišemo v tabelco:
   
-
 stevilomuzejev <- uvozi.stevilomuzejev()
+OK.vrstice1 <- apply(stevilomuzejev, 1, function(x){!any(is.na(x))})
+Ok.stevilomuzejev <- stevilomuzejev[OK.vrstice1, ]
+
 obcasnerazstave <- uvozi.obcasne()
-obiskovalci <- uvozi.obiskovalce()
+OK.vrstice2 <- apply(obcasnerazstave, 1, function(x){!any(is.na(x))})
+OK.obcasne <- obcasnerazstave[OK.vrstice2, ]
+
+obiskovalci <-uvozi.obiskovalce()
+OK.vrstice3 <- apply(obiskovalci, 1, function(x){!any(is.na(x))})
+OK.obiskovalci <- obiskovalci[OK.vrstice3, ]
 
 
 

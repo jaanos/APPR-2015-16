@@ -1,6 +1,6 @@
 ---
 title: "Poročilo pri predmetu Analiza podatkov s programom R"
-author: "Študent FMF"
+author: "Lonja Tjaša Tavčar"
 output:
   pdf_document:
     latex_engine: xelatex
@@ -19,7 +19,7 @@ source("lib/libraries.r", encoding = "UTF-8")
 
 # Izbira teme
 
-Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
+Prikazala bom nekaj podatkov o delovanju muzejev in razstavišč v različnih slovenskih regijah. 
 
 ***
 
@@ -29,15 +29,15 @@ Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
 source("uvoz/uvoz.r", encoding = "UTF-8")
 ```
 
-Uvozili smo podatke o občinah v obliki CSV s statističnega urada ter v obliki HTML
-z Wikipedije. Poglejmo si začetka obeh uvoženih razpredelnic.
+Uvozili smo podatke o številu muzejev na 10.000 prebivalcev, o procentu občasnih razstav in povprečenm številu obiskovalcev v obliki CSV s statističnega urada. Podatki so zbrani v razpredelnicah; urejeni po letih in regijah. 
 
-```{r razpredelnice}
-#kable(head(druzine))
-#head(obcine)
+```{r razpredelnice, fig.align='center'}
+kable(stevilomuzejev)
+kable(obcasnerazstave)
+kable(obiskovalci)
 ```
 
-#Slika \ref{fig:histogram} prikazuje porazdelitev števila naselij v občinah.
+Slika \ref{fig:histogram} prikazuje porazdelitev števila naselij v občinah.
 
 ```{r histogram, echo=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
 #hist(obcine[,4], main = "Pogostost števila naselij",
