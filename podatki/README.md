@@ -12,3 +12,4 @@ obcasne <- read.csv2("obcasnerazsprocent.csv")
 Povprečno število obiskovalcev:
 obisk <- read.csv2("stobiskovalcev.csv")
 
+http://www.egmus.eu/nc/en/statistics/complete_data/
