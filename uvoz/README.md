@@ -2,20 +2,32 @@
 
 Tukaj bomo imeli program, ki bo obdelal, uvozil in očistil podatke (druga faza
 projekta).
-Vektor imen stolpcev:
 
+Vektor imen stolpcev:
 regije <- c("Leto", "Pomurska", "Podravska", "Koroška", "Savinjska", "Zasavska", "Spodnjeposavska", "Jugovzhodna", "Osrednjeslovenska", "Gorenjska", "Notranjsko-kraška", "Goriška", "Obalno-kraška")
 
-Uvoz tabele s številom muzejev:
+library(reshape2)
 
-uvozi.stevilomuzejev <-function(){return(read.csv2("podatki/stmuzejevnapreb.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
-}
+stevilomuzejev <- read.csv2("podatki/stmuzejevnapreb.csv", dec =".", header = FALSE, na.strings = "...", col.names = regije)%>%melt(id.vars = "Leto", variable.name = "Regija", value.name = "Stevilo.muzejev")
 
-Uvoz procenta občasnih razstav:
+obcasnerazstave <- read.csv2("podatki/obcasnerazsprocent.csv", dec = ".", header = FALSE, na.strings = "...", col.names = regije)%>%melt(id.vars = "Leto", variable.name = "Regija", value.name = "Obcasne.razstave")
 
-uvozi.obcasne <- function(){return(read.csv2("podatki/obcasnerazsprocent.csv", header = FALSE, na.strings ="...", row.names = 1), col.names = regije)}
+obiskmuzejev <- read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALSE, na.strings = "...", col.names = regije)%>%melt(id.vars = "Leto", variable.name = "Regija", value.name = "Obisk.muzejev")
 
-Uvoz povprečnega števila obiskovalcev:
 
-uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
-}
+skupaj <- stevilomuzejev %>% full_join(obcasnerazstave) %>% full_join(obiskovalci)
+
+
+#Uvoz tabele s številom muzejev:
+
+#uvozi.stevilomuzejev <-function(){return(read.csv2("podatki/stmuzejevnapreb.csv", dec = ".", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
+#}
+
+#Uvoz procenta občasnih razstav:
+
+#uvozi.obcasne <- function(){return(read.csv2("podatki/obcasnerazsprocent.csv", dec= ".", header = FALSE, na.strings ="...", row.names = 1), col.names = regije)}
+
+#Uvoz povprečnega števila obiskovalcev:
+
+#uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
+#}
