@@ -1,8 +1,8 @@
 # 3. faza: Izdelava zemljevida
 
 # Uvozimo zemljevid.
-zemljevid <- uvozi.zemljevid("http://e-prostor.gov.si/fileadmin/BREZPLACNI_POD/RPE/OB.zip",
-                             "OB/OB", encoding = "Windows-1250")
+zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/shp/SVN_adm_shp.zip",
+                             "zemljevid/SVN_adm", encoding = "Windows-1250")
 
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 druzine <- preuredi(druzine, zemljevid, "OB_UIME", c("Ankaran", "Mirna"))

@@ -4,7 +4,6 @@ library(httr)
 library(dplyr)
 library(sp)
 library(maptools)
-library(MASS)
 library(extrafont)
 
 # Uvozimo funkcije za delo z datotekami XML.
