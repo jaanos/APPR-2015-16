@@ -1,3 +1,3 @@
 library(shiny)
 
-runApp("shiny")
+runApp("analiza")
