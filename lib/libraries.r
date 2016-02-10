@@ -5,6 +5,8 @@ library(dplyr)
 library(sp)
 library(maptools)
 library(extrafont)
+library(reshape2)
+library(ggplot2)
 
 # Uvozimo funkcije za delo z datotekami XML.
 source("lib/xml.r", encoding = "UTF-8")

@@ -15,7 +15,10 @@ obcasnerazstave <- read.csv2("podatki/obcasnerazsprocent.csv", dec = ".", header
 obiskmuzejev <- read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALSE, na.strings = "...", col.names = regije)%>%melt(id.vars = "Leto", variable.name = "Regija", value.name = "Obisk.muzejev")
 
 
-skupaj <- stevilomuzejev %>% full_join(obcasnerazstave) %>% full_join(obiskovalci)
+skupaj <- stevilomuzejev %>% full_join(obcasnerazstave) %>% full_join(obiskmuzejev)
+
+
+muziraz <-read.csv2("podatki/muzejiinrazstavisca.csv", dec = ".", header = FALSE, na.strings = "...")
 
 
 #Uvoz tabele s številom muzejev:

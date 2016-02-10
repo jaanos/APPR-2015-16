@@ -36,8 +36,8 @@ OK.obiskovalci <- obiskovalci[OK.vrstice3, ]
 
 
 
-
-
+library(dplyr)
+zdruzeno <- inner_join(Ok.stevilomuzejev, OK.obcasne, by = "Leto")
 
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
