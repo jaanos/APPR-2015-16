@@ -1,9 +1,10 @@
 # 3. faza: Izdelava zemljevida
 
 # Uvozimo zemljevid.
-zemljevid <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2.8/rds/SVN_adm0.rds",
-                             "zemljevid/SVN_adm0.rds", encoding = "Windows-1250")
+obcine <- uvozi.zemljevid("http://e-prostor.gov.si/fileadmin/BREZPLACNI_POD/RPE/OB.zip", "OB/OB", encoding = "Windows-1250")
 
+zem <- ggplot() + geom_polygon(data = muzejiinrazstavisca, aes(x=long, y=lat, group=group, fill=x2014), color= "red")+scale_fill_gradient(low="#3F7F3F", high="#00FF00")+guides(fill=guide_colorbar(title = "Muzeji 2014"))
+print(zem)
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 #druzine <- preuredi(druzine, zemljevid, "OB_UIME", c("Ankaran", "Mirna"))
 

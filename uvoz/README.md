@@ -18,7 +18,7 @@ obiskmuzejev <- read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALS
 skupaj <- stevilomuzejev %>% full_join(obcasnerazstave) %>% full_join(obiskmuzejev)
 
 
-muziraz <-read.csv2("podatki/muzejiinrazstavisca.csv", dec = ".", header = FALSE, na.strings = "...")
+
 
 
 #Uvoz tabele s številom muzejev:
