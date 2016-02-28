@@ -19,7 +19,7 @@ source("lib/libraries.r", encoding = "UTF-8")
 
 # Izbira teme
 
-Prikazala bom nekaj podatkov o delovanju muzejev in razstavišč v različnih slovenskih regijah. 
+Tema, ki sem jo izbrala za predstavitev podatkov pri predmetu Analiza podatkov s programom R je Dejavnost muzejev v Sloveniji. Za to temo sem se odločila, ker zelo rada obiskujem muzeje. Zanimalo me je predvsem število muzejev v različnih regijah in posledično število obiskovalcev, ki jih le te dosežejo.  
 
 ***
 
@@ -37,7 +37,7 @@ kable(obcasnerazstave)
 kable(obiskovalci)
 ```
 
-Slika \ref{fig:histogram} prikazuje porazdelitev števila naselij v občinah.
+
 
 ```{r histogram, echo=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
 #hist(obcine[,4], main = "Pogostost števila naselij",
@@ -52,7 +52,7 @@ Slika \ref{fig:histogram} prikazuje porazdelitev števila naselij v občinah.
 #source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 ```
 
-Slika \ref{fig:zemljevid} prikazuje povprečno velikost družine za vsako občino.
+Slika \ref{fig:zemljevid} prikazuje povprečno število muzejev v občini.
 
 ```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
 #n <- 100
