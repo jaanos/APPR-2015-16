@@ -32,9 +32,9 @@ source("uvoz/uvoz.r", encoding = "UTF-8")
 Uvozili smo podatke o številu muzejev na 10.000 prebivalcev, o procentu občasnih razstav in povprečenm številu obiskovalcev v obliki CSV s statističnega urada. Podatki so zbrani v razpredelnicah; urejeni po letih in regijah. Podatke sem dobila na spletni strani Statističnega urada Republike Slovenije. 
 
 ```{r razpredelnice, fig.align='center'}
-kable(stevilomuzejev)
-kable(obcasnerazstave)
-kable(obiskovalci)
+kable(head(ok.stevilomuzejev))
+kable(head(OK.obcasnerazstave))
+kable(head(OK.obiskmuzejev))
 ```
 
 
@@ -49,16 +49,16 @@ kable(obiskovalci)
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE}
-#source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
+source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 ```
 
 Slika \ref{fig:zemljevid} prikazuje povprečno število muzejev v občini.
 
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
+```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid razporeditve muzejev po občinah'}
 #n <- 100
 #barve <- topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
-#plot(zemljevid, col = barve)
-#title("Povprečno število otrok v družini")
+print(zem)
+title("Razporeditev muzejev po občinah")
 ```
 
 ***
