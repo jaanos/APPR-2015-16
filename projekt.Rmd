@@ -45,10 +45,12 @@ kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
 # Analiza in vizualizacija podatkov
 Za prikaz podatkov na zemljevidu sem si izbrala podatke s povprečnim številom muzejev v občini. Za to sem se odločila, da bi bila očitna razlika med občinami. Razvidno je, da imajo večje občine večje število muzejev. Največje število muzejev in razstavišč je ravno v Ljubljani, kar je pričakovano, saj je Ljubljana glavno kulturno, gospodarsko, izobraževalno in navsezadnje tudi politično središče. Preostali muzeji so dokaj enakomerno razporejeni po občinah.
 
-```{r vizualizacija, echo=FALSE,fig.cap='zem'}
+```{r vizualizacija, echo=FALSE}
 source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
-print(zem)
+
 ```
+
+
 
 Slika \ref{fig:zem} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
 
@@ -60,11 +62,12 @@ Za konec sem narisala graf na katerem je predstavljena sprememba povprečnega š
 
 ```{r analiza, echo=FALSE, fig.cap='graf'}
 source("analiza/analiza.r", encoding = "UTF-8")
+
 ```
 
 Slika \ref{fig:graf} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
-
-Drugi graf pa prikazuje odvisnost števila muzejev od števila obiskovalcev
+Slika \ref{fig:graf2} prikazuje procent občasnih razstav
+Drugi graf pa prikazuje procent občasnih razstav po regijah. 
 
 
 Za konec bi dodala, da bo v prihodnjosti število obiskovalcev naraščalo, saj so med obiskovalce všteti tako domači prebivalci, kot tudi turisti iz drugih držav. Zaradi večje prepoznavnosti Slovenije se bo tudi zanimanje za muzeje in razstavišča povečalo. Seveda pa bodo za večji obisk poskrbela tudi odprtja nekaterih prenovljenih muzejev (npr. Narodna galerija in Plečnikova hiša).
