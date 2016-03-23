@@ -29,57 +29,44 @@ Tema, ki sem jo izbrala za predstavitev podatkov pri predmetu Analiza podatkov s
 source("uvoz/uvoz.r", encoding = "UTF-8")
 ```
 
-Uvozili smo podatke o številu muzejev na 10.000 prebivalcev, o procentu občasnih razstav in povprečenm številu obiskovalcev v obliki CSV s statističnega urada. Podatki so zbrani v razpredelnicah; urejeni po letih in regijah. Podatke sem dobila na spletni strani Statističnega urada Republike Slovenije. 
+Uvozila sem podatke o številu muzejev na 10.000 prebivalcev, o procentu občasnih razstav in povprečenm številu obiskovalcev v obliki CSV. Podatki so zbrani v razpredelnicah; urejeni po letih in regijah. Podatke sem dobila na spletni strani Statističnega urada Republike Slovenije. Podatke sem uredila v razpredelnice in odstanila vrstice z manjkajočimi podatki in poimenovala stolpce z imeni regij za katere so posamezni podatki.  
 
-```{r razpredelnice, fig.align='center'}
-kable(head(ok.stevilomuzejev))
-kable(head(OK.obcasnerazstave))
-kable(head(OK.obiskmuzejev))
+```{r razpredelnice, fig.align='left'}
+kable(head(Ok.stevilomuzejev), caption = 'Število muzejev na 10000 prebivalcev')
+kable(head(OK.obcasne), caption = 'Procent občasnih razstav')
+kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
 ```
 
 
 
-```{r histogram, echo=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
-#hist(obcine[,4], main = "Pogostost števila naselij",
-     #xlab = "Število naselij", ylab = "Število občin")
-```
 
 ***
 
 # Analiza in vizualizacija podatkov
+Za prikaz podatkov na zemljevidu sem si izbrala podatke s povprečnim številom muzejev v občini. Za to sem se odločila, da bi bila očitna razlika med občinami. Razvidno je, da imajo večje občine večje število muzejev. Največje število muzejev in razstavišč je ravno v Ljubljani, kar je pričakovano, saj je Ljubljana glavno kulturno, gospodarsko, izobraževalno in navsezadnje tudi politično središče. Preostali muzeji so dokaj enakomerno razporejeni po občinah.
 
-```{r vizualizacija, echo=FALSE}
+```{r vizualizacija, echo=FALSE,fig.cap='zem'}
 source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
-```
-
-Slika \ref{fig:zemljevid} prikazuje povprečno število muzejev v občini.
-
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid razporeditve muzejev po občinah'}
-#n <- 100
-#barve <- topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
 print(zem)
-title("Razporeditev muzejev po občinah")
 ```
+
+Slika \ref{fig:zem} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
+
 
 ***
 
 # Napredna analiza podatkov
+Za konec sem narisala graf na katerem je predstavljena sprememba povprečnega števila obiskovalcev po letih in regijah. Z grafa je razvidno, da je daleč največji obisk v Notranjsko kraški regiji.Leta 2014 se je število obiskovalcev se zmanjšalo v Notranjsko kraški regiji (največji padec), Osrednjeslovenski regiji, Obalnokraški regiji in na Goriškem (najmanj). V drugih regijah je število obiskovalcev večinoma konstantno ali pa je naraslo.  
 
-```{r analiza, echo=FALSE}
-#source("analiza/analiza.r", encoding = "UTF-8")
+```{r analiza, echo=FALSE, fig.cap='graf'}
+source("analiza/analiza.r", encoding = "UTF-8")
 ```
 
-Slika \ref{fig:graf} prikazuje povezavo med številom naselij in površino občine.
+Slika \ref{fig:graf} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
 
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-#plot(obcine[[1]], obcine[[4]],
-     #main = "Število naselij glede na površino občine",
-     #xlab = expression("Površina (km"^2 * ")"),
-     #ylab = "Št. naselij",
-     #col = barve[obcine[[7]]],
-     #pch = 18)
-#legend("topright", legend = names(barve), col = barve,
-       #pch = 18, cex = 0.5, bg = "white")
-```
+Drugi graf pa prikazuje odvisnost števila muzejev od števila obiskovalcev
 
+
+Za konec bi dodala, da bo v prihodnjosti število obiskovalcev naraščalo, saj so med obiskovalce všteti tako domači prebivalci, kot tudi turisti iz drugih držav. Zaradi večje prepoznavnosti Slovenije se bo tudi zanimanje za muzeje in razstavišča povečalo. Seveda pa bodo za večji obisk poskrbela tudi odprtja nekaterih prenovljenih muzejev (npr. Narodna galerija in Plečnikova hiša).
+Zanimivo bi bilo tudi imeti podatke v katerem obdobju je bilo število obiskovalcev največje (poleti, pozimi, med prazniki,...), saj bi to omogočalo tudi nadaljno analizo navad povezanih z obiskovanjem muzejev in razstavišč. 
 ***
