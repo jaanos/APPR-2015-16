@@ -7,17 +7,17 @@ leta <- c("Obcina","2007", "2008", "2009","2010","2011","2012","2013","2014")
 
 #Uvoz tabele s številom muzejev:
   
-uvozi.stevilomuzejev <- function(){return(read.csv2("podatki/stmuzejevnapreb.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))
+uvozi.stevilomuzejev <- function(){return(read.csv2("podatki/stmuzejevnapreb.csv", header = FALSE, echo = FALSE, na.strings = "...", row.names = 1, col.names = regije))
   }
 
 #Uvoz procenta občasnih razstav:
   
-uvozi.obcasne <- function(){return(read.csv2("podatki/obcasnerazsprocent.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije))}
+uvozi.obcasne <- function(){return(read.csv2("podatki/obcasnerazsprocent.csv", header = FALSE, echo = FALSE, na.strings = "...", row.names = 1, col.names = regije))}
 
 #Uvoz povprečnega števila obiskovalcev:
   
-uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije)) }
-uvozi.muzeje <- function(){return(read.csv("podatki/muzejiinrazstavisca.csv", dec = ".", na.strings ="-", header = FALSE, row.names=1, col.names = leta))}
+uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", header = FALSE, echo = FALSE, na.strings = "...", row.names = 1, col.names = regije)) }
+uvozi.muzeje <- function(){return(read.csv("podatki/muzejiinrazstavisca.csv", dec = ".", na.strings ="-", header = FALSE, echo = FALSE, row.names=1, col.names = leta))}
 #Zapišemo v tabelco:
   
 stevilomuzejev <- uvozi.stevilomuzejev()
