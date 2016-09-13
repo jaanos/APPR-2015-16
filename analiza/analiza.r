@@ -10,7 +10,7 @@ graf <- ggplot(obiskovalci.tidy, aes(x = leto, y = stevilo,
   geom_line() + geom_point() + ggtitle("Obiskovalci") +
   xlab("Leta") + ylab("Skupaj")
 
-plot(graf)
+#plot(graf)
 
 obcasne.tidy <- data.frame(leto = rownames(OK.obcasne),
                                OK.obcasne) %>%

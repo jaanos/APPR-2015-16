@@ -8,7 +8,7 @@ output:
       in_header: lib/styles.sty
 ---
 
-```{r setup, echo=FALSE, results='hide', message=FALSE}
+```{r setup, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Če želimo nastaviti pisave v PDF-ju, odkomentiramo
 # in sledimo navodilom v programu.
 #source("fontconfig.r", encoding = "UTF-8")
@@ -25,13 +25,13 @@ Tema, ki sem jo izbrala za predstavitev podatkov pri predmetu Analiza podatkov s
 
 # Obdelava, uvoz in čiščenje podatkov
 
-```{r uvoz, echo=FALSE}
+```{r uvoz, echo=FALSE, message=FALSE, warning=FALSE}
 source("uvoz/uvoz.r", encoding = "UTF-8")
 ```
 
 Uvozila sem podatke o številu muzejev na 10.000 prebivalcev, o procentu občasnih razstav in povprečenm številu obiskovalcev v obliki CSV. Podatki so zbrani v razpredelnicah; urejeni po letih in regijah. Podatke sem dobila na spletni strani Statističnega urada Republike Slovenije. Podatke sem uredila v razpredelnice in odstanila vrstice z manjkajočimi podatki in poimenovala stolpce z imeni regij za katere so posamezni podatki.  
 
-```{r razpredelnice, fig.align='left'}
+```{r razpredelnice, fig.align='left', message=FALSE, warning=FALSE}
 kable(head(Ok.stevilomuzejev), caption = 'Število muzejev na 10000 prebivalcev')
 kable(head(OK.obcasne), caption = 'Procent občasnih razstav')
 kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
@@ -45,8 +45,9 @@ kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
 # Analiza in vizualizacija podatkov
 Za prikaz podatkov na zemljevidu sem si izbrala podatke s povprečnim številom muzejev v občini. Za to sem se odločila, da bi bila očitna razlika med občinami. Razvidno je, da imajo večje občine večje število muzejev. Največje število muzejev in razstavišč je ravno v Ljubljani, kar je pričakovano, saj je Ljubljana glavno kulturno, gospodarsko, izobraževalno in navsezadnje tudi politično središče. Preostali muzeji so dokaj enakomerno razporejeni po občinah.
 
-```{r vizualizacija, echo=FALSE}
+```{r vizualizacija, echo=FALSE, message=FALSE,warning=FALSE}
 source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
+print(zem)
 
 ```
 
@@ -60,8 +61,10 @@ Slika \ref{fig:zem} prikazuje spremembo povprečnega števila obiskovalcev po re
 # Napredna analiza podatkov
 Za konec sem narisala graf na katerem je predstavljena sprememba povprečnega števila obiskovalcev po letih in regijah. Z grafa je razvidno, da je daleč največji obisk v Notranjsko kraški regiji.Leta 2014 se je število obiskovalcev se zmanjšalo v Notranjsko kraški regiji (največji padec), Osrednjeslovenski regiji, Obalnokraški regiji in na Goriškem (najmanj). V drugih regijah je število obiskovalcev večinoma konstantno ali pa je naraslo.  
 
-```{r analiza, echo=FALSE, fig.cap='graf'}
+```{r analiza, echo=FALSE, fig.align='center',  fig.cap='Obiskovalci po regijah', message=FALSE, warning=FALSE}
 source("analiza/analiza.r", encoding = "UTF-8")
+plot(graf)
+plot(graf2)
 
 ```
 
@@ -72,4 +75,3 @@ Drugi graf pa prikazuje procent občasnih razstav po regijah.
 
 Za konec bi dodala, da bo v prihodnjosti število obiskovalcev naraščalo, saj so med obiskovalce všteti tako domači prebivalci, kot tudi turisti iz drugih držav. Zaradi večje prepoznavnosti Slovenije se bo tudi zanimanje za muzeje in razstavišča povečalo. Seveda pa bodo za večji obisk poskrbela tudi odprtja nekaterih prenovljenih muzejev (npr. Narodna galerija in Plečnikova hiša).
 Zanimivo bi bilo tudi imeti podatke v katerem obdobju je bilo število obiskovalcev največje (poleti, pozimi, med prazniki,...), saj bi to omogočalo tudi nadaljno analizo navad povezanih z obiskovanjem muzejev in razstavišč. 
-***
