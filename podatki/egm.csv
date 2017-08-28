@@ -1,0 +1,31 @@
+Country;Year;2a) Number of museums according to type of collection : total;2b) Number of museums according to type of collection : of which - Art, archaeology and history museums;2c) Number of museums according to type of collection : of which - Science and technology museums, ethnology museums;2d) Number of museums according to type of collection : of which - Other museums;3a) Ownership : state-owned museums - Total;3b) Ownership : local-, regional-owned museums - Total;3c) Ownership : other public-owned museums - Total;3d) Ownership : private-owned museums - Total;3e) Ownership : private-owned museums - Of which - ppp;6a) Number of visits : Total;6b) Number of visits : Of which - free admissions - Total;6c) Number of visits : Of which - free admissions - %;6d) Number of visits : Of which - foreigners - Total;6e) Number of visits : Of which - foreigners - %;6f) Number of visits : Of which - temporary exhibitions - Total;6g) Number of visits : Of which - temporary exhibitions - %
+Austria;2014;562;164;73;325;41;231;1;289; ;17.287.605;3.152.209;20,8; ; ; ; 
+Belarus;2009;155;136;12;7;13;137;5; ; ;4.586.306;917.261;20;91.726;2;3.718.607;81
+Belgium;2004;162;192;58;56;8;74;6;47; ;3.706.139;1.039.337;35; ;70; ; 
+Bulgaria;2015;201;154;17;30;26;170;5; ; ;4.763.472;1.246.561;26,2;737.642;15,5; ; 
+Croatia;2014;284;114;61;109;33;167;83;1; ;4.771.230;1.087.271;23; ; ;729.911;15
+Czech Republic;2016;484;101;52;331;30;350;48;56; ;13.071.769;3.634.190;27,8;2.703.166;20,68; ; 
+Denmark;2015;254;181;73; ;5; ; ;124; ;16.185.412; ; ; ; ; ; 
+Estonia;2014;256;65;19;172;88;85; ;83; ;3.837.000;774.000;20;1.119.000;29; ; 
+Finland;2015;331; ; ; ;19;218;8;86; ;5.605.374;2.935.844;52,4; ; ; ; 
+France;2010;330; ; ; ;36;214;2;78; ;4.869.035;2.502.978;51,4;401.253;8,2; ; 
+Germany;2015;6.710;1.207; ;5.503;432;2.586;437;2.994;261;114.423.192; ; ; ; ; ; 
+Greece;2007;176;176; ; ;176; ; ; ; ;4.755.535;940.561;19,8; ; ; ; 
+Hungary;2013;752; ; ; ; ; ; ; ; ;9.133.600;3.809.182;42;1.675.625;18; ; 
+Ireland;2014;230; ; ; ; ; ; ; ; ;6.108.480; ; ; ; ; ; 
+Italy;2013;459;459; ; ;459; ; ; ; ;38.190.401;17.503.913;53,94; ; ; ; 
+Latvia;2015;149; ; ; ;41;94;9;5; ;3.259.783;1.304.343;40;241.652;7,4; ; 
+Lithuania;2016;103; ; ; ;19;54;22;8; ;3.981.126; ; ; ; ; ; 
+Luxembourg;2012;54;20;17;17;6;11;4;33; ;516.000;291.000;56,4;198.000;38,4; ; 
+Macedonia;2009;23;22; ;1;16;7; ; ; ;957.182; ; ;37.500; ; ; 
+Norway;2013;127; ; ; ;13;15;99; ; ;10.944.898;5.579.320;51; ; ; ; 
+Poland;2015;926;279;144;503;75;603;64;184; ;33.271.294;14.771.292;44; ; ; ; 
+Portugal;2014;674;261;174;239;485; ; ;189; ;11.749.732;4.628.748;39,4;4.289.128;36,5;6.053.137;51,5
+Romania;2007;748;446;125;177;54;568;32;94; ;3.633.443;995.548; ;291.344; ;2.346.551; 
+Slovak Republic;2003;85;36;11;38;34;46; ;5; ;3.886.928;909.366;23,4; ; ; ; 
+Slovenia;2013; ; ; ; ; ; ; ; ; ;3.558.551;2.410.017;67,7;731.519;21; ; 
+Spain;2014;1.468;722;372;374;171;824;35;438;28;58.418.342;35.459.934;60,7;5.666.579;9,7; ; 
+Sweden;2015;310;110;24;148;38;83;44;132;6;15.066.851; ; ; ; ; ; 
+Switzerland;2014;1.142;307;626;209; ; ; ; ; ;20.799.800;4.209.300;20; ; ; ; 
+The Netherlands;2015;685;489;156;40;67; ; ;618; ;33.109.967;5.521.387;17;9.349.488;28; ; 
+United Kingdom;2012;1.732; ; ; ;58;581;83;910; ;87.624.176; ; ; ; ; ; 

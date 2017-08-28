@@ -35,7 +35,11 @@ Uvozila sem podatke o številu muzejev na 10.000 prebivalcev, o procentu občasn
 kable(head(Ok.stevilomuzejev), caption = 'Število muzejev na 10000 prebivalcev')
 kable(head(OK.obcasne), caption = 'Procent občasnih razstav')
 kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
+kable(head(ok.egmnapreb3), caption = 'Število muzejev na 10000 prebivalcev v ostalih evropskih državah')
+kable(head(ok.egmskupaj2), caption = 'Število skupnih obiskov muzejev v različnih evropskih državah')
 ```
+Poleg podatkov za Slovenijo sem poiskala tudi podatke za nekatere druge evropske države. Pri tem sem imela nekaj težav, saj so podatki za nekatere države manjkali (še posebaj v tabeli Število muzejev na 10000 prebivalcev). 
+
 
 
 
@@ -65,12 +69,12 @@ Za konec sem narisala graf na katerem je predstavljena sprememba povprečnega š
 source("analiza/analiza.r", encoding = "UTF-8")
 plot(graf)
 plot(graf2)
-
+plot(graf3)
 ```
 
 Slika \ref{fig:graf} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
-Slika \ref{fig:graf2} prikazuje procent občasnih razstav
-Drugi graf pa prikazuje procent občasnih razstav po regijah. 
+Slika \ref{fig:graf2} prikazuje procent občasnih razstav po regijah.
+Zaradi mešanih podatkov sem za konec izlušila države, ki so imele podano skupno število obiskovalcev za leto 2013, kar prikazujejo točke v grafu 3. 
 
 
 Za konec bi dodala, da bo v prihodnjosti število obiskovalcev naraščalo, saj so med obiskovalce všteti tako domači prebivalci, kot tudi turisti iz drugih držav. Zaradi večje prepoznavnosti Slovenije se bo tudi zanimanje za muzeje in razstavišča povečalo. Seveda pa bodo za večji obisk poskrbela tudi odprtja nekaterih prenovljenih muzejev (npr. Narodna galerija in Plečnikova hiša).

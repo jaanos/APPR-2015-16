@@ -18,6 +18,14 @@ uvozi.obcasne <- function(){return(read.csv2("podatki/obcasnerazsprocent.csv", h
   
 uvozi.obiskovalce <- function(){return(read.csv2("podatki/stobiskovalcev.csv", header = FALSE, na.strings = "...", row.names = 1, col.names = regije)) }
 uvozi.muzeje <- function(){return(read.csv("podatki/muzejiinrazstavisca.csv", dec = ".", na.strings ="-", header = FALSE, row.names=1, col.names = leta))}
+
+#Uvoz evrop. št. muzejev
+uvozi.egmnapreb <- function(){return(read.csv2("podatki/egm-napreb.csv", dec = ",", header = FALSE, na.strings = "", colClasses = c("NULL", NA, NA), row.names = drzave, col.names = imena2, skip = 1))}
+
+#uvoz skupnega obiska za evropo
+uvozi.evropa <- function(){return(read.csv2("podatki/egm-skupaj.csv", dec = ",", header = FALSE, na.strings = "", colClasses = c("NULL", NA, NA, "NULL", "NULL", "NULL", "NULL", "NULL"), row.names = drzave, col.names = imena3, skip = 1))}
+
+
 #Zapišemo v tabelco:
   
 stevilomuzejev <- uvozi.stevilomuzejev()
@@ -47,8 +55,18 @@ obiskmuzejev <- read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALS
 
 skupaj <- stevilomuzejev %>% full_join(obiskmuzejev) 
 
+imena2 <- c("Država", "Leto", "Muzeji na 10.000 prebivalcev")
+drzave <- c("Avstrija", "Belorusija", "Belgija", "Bulgarija", "Hrvaška", "Češka", "Danska", "Estonija", "Finska", "Francija", "Nemčija", "Grčija", "Madžarska", "Irska", "Italija", "Latvija", "Litva", "Luksemburg", "Makedonija", "Norveška", "Poljska", "Portugalska", "Romunija", "Slovaška", "Slovenija", "Španija", "Švedska", "Švica", "Nizozemska", "Združeno Kraljestvo")
+imena3 <- c("Država", "Leto", "Obisk.muzejev", "A", "B", "C", "D", "E")
+#Uvozimo evropsko število muzejev na prebivalca
+egmnapreb3 <- uvozi.egmnapreb()
+ok.vrstice5 <- apply(egmnapreb3, 1, function(x){!any(is.na(x))})
+ok.egmnapreb3 <- egmnapreb3[ok.vrstice5, ]
 
-
+#Uvozim skupno število obiskov za evropo
+egmskupaj2 <- uvozi.evropa()
+ok.vrstice6 <- apply(egmskupaj2, 1, function(x){!any(is.na(x))})
+ok.egmskupaj2 <- egmskupaj2[ok.vrstice6, ]
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 #uvozi.druzine <- function() {

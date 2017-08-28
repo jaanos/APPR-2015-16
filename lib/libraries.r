@@ -8,6 +8,8 @@ library(extrafont)
 library(reshape2)
 library(ggplot2)
 library(gsubfn)
+library(tidyr)
+
 
 # Uvozimo funkcije za delo z datotekami XML.
 source("lib/xml.r", encoding = "UTF-8")

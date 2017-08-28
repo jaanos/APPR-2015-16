@@ -30,6 +30,6 @@ zem <- ggplot() + geom_polygon(data = muzeji %>% filter(Leto == 2014) %>%
   scale_fill_gradient(low="#3F7F3F", high="#00FF00") +
   guides(fill=guide_colorbar(title = "Muzeji 2014"))
 
-#print(zem)
+print(zem)
 
 

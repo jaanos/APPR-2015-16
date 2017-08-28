@@ -16,5 +16,6 @@ obisk <- read.csv2("stobiskovalcev.csv")
 leta <- c("Obcina","2007", "2008", "2009","2010","2011","2012","2013","2014")
 muzejiinrazstavisca <- read.csv("muzejiinrazstavisca.csv", dec = ".", na.strings ="-", header = FALSE, row.names=1, col.names = leta)
 
+egm <- read.csv("egm.csv")
 
-http://www.egmus.eu/nc/en/statistics/complete_data/
+
