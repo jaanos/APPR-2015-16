@@ -17,8 +17,20 @@ obiskmuzejev <- read.csv2("podatki/stobiskovalcev.csv", dec = ".", header = FALS
 
 skupaj <- stevilomuzejev %>% full_join(obcasnerazstave) %>% full_join(obiskmuzejev)
 
+#Število muzejev na 10.000 prebivalcev
+imena2 <- c("Država", "Leto", "Muzeji na 10.000 prebivalcev")
+drzave <- c("Avstrija", "Belorusija", "Belgija", "Bulgarija", "Hrvaška", "Češka", "Danska", "Estonija", "Finska", "Francija", "Nemčija", "Grčija", "Madžarska", "Irska", "Italija", "Latvija", "Litva", "Luksemburg", "Makedonija", "Norveška", "Poljska", "Portugalska", "Romunija", "Slovaška", "Slovenija", "Španija", "Švedska", "Švica", "Nizozemska", "Združeno Kraljestvo")
+egmnapreb <- read.csv2("podatki/egm-napreb.csv", dec = ",", header = FALSE, na.strings = "", colClasses = c("NULL", NA, NA), row.names = drzave, 
+col.names = imena2, skip = 1)
 
+#COLCLASSES da sem odstranila nepotreben stolpec
 
+egmnapreb2 <- drop_na(egmnapreb) 
+#odstranila NA vrstice
+
+#Skupen obisk muzejev v Evropi
+imena3 <- c("Država", "Leto", "Obisk.muzejev", "A", "B", "C", "D", "E")
+egmskupaj <- read.csv2("podatki/egm-skupaj.csv", dec = ",", header = FALSE, na.strings = "", colClasses = c("NULL", NA, NA, "NULL", "NULL", "NULL", "NULL", "NULL"), row.names = drzave, col.names = imena3, skip = 1)
 
 
 #Uvoz tabele s številom muzejev:
