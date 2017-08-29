@@ -32,31 +32,31 @@ source("uvoz/uvoz.r", encoding = "UTF-8")
 
 ## Število muzejev na 10000 prebivalcev v Sloveniji
 Prva tabela prikazuje število muzejev na 10000 prebivalcev.
-```{r razpredelnica, fig.align='left', message=FALSE, warning=FALSE}
+```{r razpredelnica, fig.align='left', echo=FALSE,message=FALSE, warning=FALSE}
 kable(head(Ok.stevilomuzejev), caption = 'Število muzejev na 10000 prebivalcev')
 
 ```
 
 ## Procent občasnih razstav
 V drugi tabeli je predstavljen procent občasnih rastav.
-```{r razpredelnica2, fig.align='left', message=FALSE, warning=FALSE}
+```{r razpredelnica2, fig.align='left', echo=FALSE, message=FALSE, warning=FALSE}
 kable(head(OK.obcasne), caption = 'Procent občasnih razstav')
 
 ```
 
 ## Povprečno število obiskovalcev
 V zadnji tabeli pa je celotno povrečno število obiskovalcev v določenem letu. 
-```{r razpredelnica3, fig.align='left', message=FALSE, warning=FALSE}
+```{r razpredelnica3, fig.align='left', echo=FALSE, message=FALSE, warning=FALSE}
 
 kable(head(OK.obiskovalci), caption = 'Povprečno število obiskovalcev')
 ```
 
 ## Samo za primerjavo
 Za primerjavo pa sem se odločila pogledati tudi podatke nekaterih drugih evropskih držav, ki sem jih našla na spletni strani egm.com Tu sem imela več težav z manjkajočimi podatki še posebaj pri tabeli \ref{fig:razpredelnice1}. 
-```{r razpredelnice1, fig.align='left', message=FALSE, warning=FALSE}
+```{r razpredelnice1, fig.align='left', echo=FALSE,message=FALSE, warning=FALSE}
 kable(head(ok.egmnapreb3), caption = 'Število muzejev na 10000 prebivalcev v ostalih evropskih državah')
 ```
-```{r razpredelnice2, fig.align='left', message=FALSE, warning=FALSE}
+```{r razpredelnice2, fig.align='left', echo=FALSE, message=FALSE, warning=FALSE}
 kable(head(ok.egmskupaj2), caption = 'Število skupnih obiskov muzejev v različnih evropskih državah')
 ```
 
@@ -72,13 +72,12 @@ Poleg podatkov za Slovenijo sem poiskala tudi podatke za nekatere druge evropske
 ##Zemljevid
 Za prikaz podatkov na zemljevidu sem si izbrala podatke s povprečnim številom muzejev v občini. Za to sem se odločila, da bi bila očitna razlika med občinami. Razvidno je, da imajo večje občine večje število muzejev. Največje število muzejev in razstavišč je ravno v Ljubljani, kar je pričakovano, saj je Ljubljana glavno kulturno, gospodarsko, izobraževalno in navsezadnje tudi politično središče. Preostali muzeji so dokaj enakomerno razporejeni po občinah.
 
-```{r vizualizacija, echo=FALSE, message=FALSE,warning=FALSE}
+```{r vizualizacija, fig.align='center', fig.cap= "Sprememba povprečnega števila obiskovalcev po regijah", echo=FALSE, message=FALSE,warning=FALSE}
 source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 print(zem)
 
 ```
 
-Slika \ref{fig:vizualizacija} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
 
 
 ##Grafi
@@ -93,7 +92,7 @@ plot(graf)
 source("analiza/analiza.r", encoding = "UTF-8")
 plot(graf2)
 ```
-```{r analiza3, echo=FALSE, fig.align='center', fig.cap='Število obiskovalcev v letu 2013'}
+```{r analiza3, echo=FALSE, fig.align='center', fig.cap='Število obiskovalcev v letu 2013', message=FALSE, warning=FALSE}
 source("analiza/analiza.r", encoding = "UTF-8")
 plot(graf3)
 
@@ -101,11 +100,41 @@ plot(graf3)
 
 
 
-Slika \ref{fig:analiza1} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
+Slika \ref{fig:analiza} prikazuje spremembo povprečnega števila obiskovalcev po regijah.
 Slika \ref{fig:analiza2} prikazuje procent občasnih razstav po regijah. S svetlo modro barvo je prikazana Osrednjeslovenska regija, kamor spada tudi Ljubljana. Ravno v tej regiji je bil leta 2013 najmanjši procent občasnih razstav. Delno lahko tudi zato, ker je v Ljubljani več muzejev in galerij s stalnimi zbirkami. V letu 2011 in 2012 pa so bile vse razstave v Notranjsko-kraški regiji občasne. Sklepamo lahko, da manjše regije in občine nimajo primerne infrastrukture oziroma imajo premalo sredstev, da bi lahko gostile več stalnih razstav. Občasne pa so lahko s tega vidika nekoliko preprostejše.
 Spet sem samo za primerjavo vzela še nekaj evropskih podatkov.Zaradi mešanih podatkov sem za konec izlušila države, ki so imele podano skupno število obiskovalcev za leto 2013, kar prikazujejo točke v grafu \ref{fig:analiza3}. Vidimo lahko, da je imela Italija največ obiskovalcev muzejev, kar je pričakovano. Razlog za visok obisk je priljubljenost pri turistih in veliko število znanih muzejev. 
 
 ***
 #Napredna analiza podatkov
-Za konec bi dodala, da bo v prihodnjosti število obiskovalcev naraščalo, saj so med obiskovalce všteti tako domači prebivalci, kot tudi turisti iz drugih držav. Zaradi večje prepoznavnosti Slovenije se bo tudi zanimanje za muzeje in razstavišča povečalo. Seveda pa bodo za večji obisk poskrbela tudi odprtja nekaterih prenovljenih muzejev (npr. Narodna galerija in Plečnikova hiša).
-Zanimivo bi bilo tudi imeti podatke v katerem obdobju je bilo število obiskovalcev največje (poleti, pozimi, med prazniki,...), saj bi to omogočalo tudi nadaljno analizo navad povezanih z obiskovanjem muzejev in razstavišč. 
+Za konec me je zanimalo, če sta podatka o številu muzejev in številom obiskovalcev med seboj povezana. Predvidevala sem, da večje število muzejev pomeni tudi več obiskovalcev. Odločila sem se posvetiti predvsem podatkom za Osrednjeslovensko regijo, ker je ta najbolj številčna v primeru obiskovalcev. Podatki so obsegali čas od leta 2007 do leta 2014. Pregledala sem različne korelacije med tema dvema podatkoma. Med drugim sem s pomočjo QQ-Plot preverila tudi ali sta podatka slučajno normalno porazdeljena.
+Najprej sem pogledala korelacijski koeficient med obema vrednostima:
+```{r korealcijski, echo=FALSE, message=FALSE, warning=FALSE}
+source("analiza/analiza.r", encoding = "UTF-8")
+print(cor(delnidf$skupaj.Stevilo.muzejev, delnidf$skupaj.Obisk.muzejev))
+
+```
+Korelacijski koeficient nakazuje šibko do zmerno pozitivno korelacijo, kar pomeni, da v primeru, da se ena od teh spremenljivk poveča, se bo druga tudi. Ta rezultat potrjuje mojo hipotezo.
+
+S Shapiro-Wilk testom sem preverila, če podatki slučajno izhajajo iz normalne porazdelitve. Predvidevla sem, da ne. Prva vrednost predstavlja p-value za število muzejev v Osrednjeslovenski regiji; druga pa p-value za obisk muzejev.
+```{r shapiro, echo=FALSE, message=FALSE, warning=FALSE}
+source("analiza/analiza.r", encoding = "UTF-8")
+print(shapiro.test(delnidf$skupaj.Stevilo.muzejev)$p.value)
+print(shapiro.test(delnidf$skupaj.Obisk.muzejev)$p.value)
+
+```
+Kot sem predvidevala, so podatki daleč od normalne porazdelitve, saj sta obe p-vrednosti zelo veliki. V primeru, da bi podatki izhajali iz normalne porazdelitve pa bi morali biti nižji od 0.05. 
+
+Nazadnje sem isto preverila še s pomočjo QQ-grafov. 
+```{r qq, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
+source("analiza/analiza.r", encoding = "UTF-8")
+qqnorm(skupaj$Stevilo.muzejev[skupaj$Regija == "Osrednjeslovenska"], main = "Število muzejev v Osrednjeslovenski regiji")
+qqline(skupaj$Stevilo.muzejev[skupaj$Regija == "Osrednjeslovenska"])
+qqnorm(skupaj$Obisk.muzejev[skupaj$Regija == "Osrednjeslovenska"], main ="Obisk muzejev v osrednjeslovenski regiji")
+qqline(skupaj$Obisk.muzejev[skupaj$Regija == "Osrednjeslovenska"])
+```
+Nobeden od posameznih podatkov ne izgleda, kot da bi izhajal iz normalne porazdelitve. Odmiki od qqline črte so kar veliki. Razlog za to je lahko seveda tudi dokaj majhno število podatkov. Če bi imela večje število podatkov, bi verjetno lahko prišla do več zaključkov. 
+
+***
+
+#Zaključek in ideje za prihodnost
+V prihodnosti bi bilo zanimivo preveriti tudi povezavo med številom turistov in številom obiskovalcev muzejev. Glede na to, da v zadnjih letih narašča tudi število tujih obiskovalcev, bi se posledično lahko zvišalo tudi število obiskovalcev muzejev. 
